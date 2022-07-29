@@ -3,19 +3,18 @@
 // It should remove all values from list a, which are present in list b keeping their order.
 // creat a function that takes two arrays as arguments
 function arrayDiff(arr1,arr2) {
+    // store the values of each array in new variables
+    let a = arr1;
+    let b = arr2;
     // iterate through the first array
-    for (let i = 0; i < arr1.length; i++) {
-        console.log(i);
-        // check if values of a are present in each index of b
-        for (let j = 0; j < arr2.length; j++) {
-            // if values are present in list a, and list b, remove values from list a
-            console.log(j);
-            if (arr1[i] == arr2[j]) {
-                arr1[i].slice(1,1);
-            }   
-        }     
+    for (let i = 0; i < a.length; i++) {
+        for (let j = 0; j < b.length; j++) {
+            if(a[i] == b[j]){
+                a.splice(i,1);
+            }
+        }
     }
-    return arr1;  
-}
+    return a;
+}   
 
 console.log(arrayDiff([1,2,3,4,5,6], [1,3,6]));
